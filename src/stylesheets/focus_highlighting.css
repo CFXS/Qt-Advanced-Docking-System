@@ -1,43 +1,31 @@
 /*
  * Default style sheet on Windows Platforms with focus highlighting flag enabled
  */
-ads--CDockContainerWidget {
+ ads--CDockContainerWidget {
 	background: palette(dark);
 }
 
 ads--CDockAreaWidget {
 	background: palette(window);
-	border: 1px solid white;
 }
 
 ads--CDockWidgetTab {
-	background: palette(window);
-	border-color: palette(light);
-	border-style: solid;
-	border-width: 0 1px 0 0;
-	padding: 0 0px;
+	background: palette(midlight);
+	border: none;
+	padding: 3 3px;
 	qproperty-iconSize: 16px 16px;/* this is optional in case you would like to change icon size*/
 }
 
 ads--CDockWidgetTab[activeTab="true"] {
-	background: qlineargradient(spread : pad, x1 : 0, y1 : 0, x2 : 0, y2 : 0.5, stop : 0
-		palette(window), stop:1 palette(light));
-	/*background: palette(highlight);*/
+	background: palette(highlight);
 }
 
 ads--CDockWidgetTab QLabel {
-	color: palette(dark);
-}
-
-ads--CDockWidgetTab[activeTab="true"] QLabel {
-	color: palette(foreground);
+	color: palette(text);
 }
 
 ads--CDockWidget {
-	background: palette(light);
-	border-color: palette(light);
-	border-style: solid;
-	border-width: 1px 0 0 0;
+	background: palette(dark);
 }
 
 ads--CTitleBarButton {
@@ -58,7 +46,7 @@ QScrollArea#dockWidgetScrollArea {
 	background: none;
 	border: none;
 	padding: 0px -2px;
-	qproperty-icon: url(:/ads/images/close-button.svg),
+	qproperty-icon: url(:/ads/images/close-button-focused.svg),
 		url(:/ads/images/close-button-disabled.svg) disabled;
 	qproperty-iconSize: 16px;
 }
@@ -73,7 +61,7 @@ QScrollArea#dockWidgetScrollArea {
 }
 
 #dockAreaCloseButton {
-	qproperty-icon: url(:/ads/images/close-button.svg),
+	qproperty-icon: url(:/ads/images/close-button-focused.svg),
 		url(:/ads/images/close-button-disabled.svg) disabled;
 	qproperty-iconSize: 16px;
 }
@@ -94,7 +82,6 @@ ads--CDockSplitter::handle {
 /* Focus related styling */
 ads--CDockWidgetTab[focused="true"] {
 	background: palette(highlight);
-	border-color: palette(highlight);
 }
 
 ads--CDockWidgetTab[focused="true"]>#tabCloseButton {
@@ -102,25 +89,15 @@ ads--CDockWidgetTab[focused="true"]>#tabCloseButton {
 }
 
 ads--CDockWidgetTab[focused="true"]>#tabCloseButton:hover {
-	background: rgba(255, 255, 255, 48);
+	background: rgba(255, 255, 255, 64);
 }
 
 ads--CDockWidgetTab[focused="true"]>#tabCloseButton:pressed {
 	background: rgba(255, 255, 255, 92);
 }
 
-ads--CDockWidgetTab[focused="true"] QLabel {
-	color: palette(light);
-}
-
 ads--CDockAreaTitleBar {
-	background: transparent;
-	border-bottom: 2px solid palette(light);
-	padding-bottom: 0px;
-}
-
-ads--CDockAreaWidget[focused="true"] ads--CDockAreaTitleBar {
-	background: transparent;
-	border-bottom: 2px solid palette(highlight);
+	background: palette(mid);
+	border-bottom: 2px solid palette(dark);
 	padding-bottom: 0px;
 }
