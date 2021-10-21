@@ -12,7 +12,7 @@ ads--CDockAreaWidget {
 ads--CDockWidgetTab {
 	background: palette(midlight);
 	border: none;
-	padding: 3 3px;
+	padding: 4 3px;
 	qproperty-iconSize: 16px 16px;/* this is optional in case you would like to change icon size*/
 }
 
