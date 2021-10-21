@@ -598,6 +598,7 @@ void FloatingDockContainerPrivate::handleEscapeKey()
 //============================================================================
 CFloatingDockContainer::CFloatingDockContainer(CDockManager *DockManager) :
 	tFloatingWidgetBase(DockManager),
+	//tFloatingWidgetBase(nullptr), // MODIFIED BY CFXS: DockManager as parent does not show seperate taskbar entries
 	d(new FloatingDockContainerPrivate(this))
 {
 	d->DockManager = DockManager;
@@ -664,6 +665,9 @@ CFloatingDockContainer::CFloatingDockContainer(CDockManager *DockManager) :
 	setLayout(l);
 	l->addWidget(d->DockContainer);
 #endif
+
+	// MODIFIED BY CFXS: Minimize
+	// setWindowFlag(Qt::WindowMinimizeButtonHint, true);
 
 	DockManager->registerFloatingWidget(this);
 }

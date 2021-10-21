@@ -10,14 +10,22 @@ ads--CDockAreaWidget {
 }
 
 ads--CDockWidgetTab {
-	background: palette(midlight);
+	background: rgb(55, 55, 55);
 	border: none;
+	border-bottom: 3px solid palette(midlight);
 	padding: 4 3px;
 	qproperty-iconSize: 16px 16px;/* this is optional in case you would like to change icon size*/
 }
 
 ads--CDockWidgetTab[activeTab="true"] {
-	background: palette(highlight);
+	background: rgb(44, 44, 44);
+	border-bottom: 3px solid palette(highlight);
+}
+
+/* Focus related styling */
+ads--CDockWidgetTab[focused="true"] {
+	background: rgb(44, 44, 44);
+	border-bottom: 3px solid palette(highlight);
 }
 
 ads--CDockWidgetTab QLabel {
@@ -77,11 +85,6 @@ ads--CDockSplitter::handle {
 	/* uncomment the following line if you would like to change the size of
        the splitter handles */
 	/* height: 1px; */
-}
-
-/* Focus related styling */
-ads--CDockWidgetTab[focused="true"] {
-	background: palette(highlight);
 }
 
 ads--CDockWidgetTab[focused="true"]>#tabCloseButton {
