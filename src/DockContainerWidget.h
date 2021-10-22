@@ -146,16 +146,6 @@ protected:
 	CDockAreaWidget* topLevelDockArea() const;
 
     /**
-     * This function returns a list of all dock widgets in this floating widget.
-     * It may be possible, depending on the implementation, that dock widgets,
-     * that are not visible to the user have no parent widget. Therefore simply
-     * calling findChildren() would not work here. Therefore this function
-     * iterates over all dock areas and creates a list that contains all
-     * dock widgets returned from all dock areas.
-     */
-    QList<CDockWidget*> dockWidgets() const;
-
-    /**
      * This function forces the dock container widget to update handles of splitters
      * based on resize modes of dock widgets contained in the container.
      */
@@ -171,6 +161,17 @@ public:
 	 * Virtual Destructor
 	 */
 	virtual ~CDockContainerWidget();
+
+	// MODIFIED BY CFXS: moved to public
+    /**
+     * This function returns a list of all dock widgets in this floating widget.
+     * It may be possible, depending on the implementation, that dock widgets,
+     * that are not visible to the user have no parent widget. Therefore simply
+     * calling findChildren() would not work here. Therefore this function
+     * iterates over all dock areas and creates a list that contains all
+     * dock widgets returned from all dock areas.
+     */
+    QList<CDockWidget*> dockWidgets() const;
 
 	/**
 	 * Adds dockwidget into the given area.
