@@ -667,7 +667,9 @@ CFloatingDockContainer::CFloatingDockContainer(CDockManager *DockManager) :
 #endif
 
 	// MODIFIED BY CFXS: Minimize
-	// setWindowFlag(Qt::WindowMinimizeButtonHint, true);
+	setWindowFlag(Qt::Window, false);
+	setWindowFlag(Qt::WindowMaximizeButtonHint, false);
+	setWindowFlag(Qt::Tool, true);
 
 	DockManager->registerFloatingWidget(this);
 }
