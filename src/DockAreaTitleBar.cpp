@@ -149,14 +149,16 @@ void DockAreaTitleBarPrivate::createButtons()
 	TabsMenuButton->setObjectName("tabsMenuButton");
 	TabsMenuButton->setAutoRaise(true);
 	TabsMenuButton->setPopupMode(QToolButton::InstantPopup);
-	internal::setButtonIcon(TabsMenuButton, QStyle::SP_TitleBarUnshadeButton, ads::DockAreaMenuIcon);
+	
+	TabsMenuButton->setIcon(QPixmap(":/Image/MidDownArrow.svg"));
+
 	QMenu* TabsMenu = new QMenu(TabsMenuButton);
 #ifndef QT_NO_TOOLTIP
 	TabsMenu->setToolTipsVisible(true);
 #endif
 	_this->connect(TabsMenu, SIGNAL(aboutToShow()), SLOT(onTabsMenuAboutToShow()));
 	TabsMenuButton->setMenu(TabsMenu);
-	internal::setToolTip(TabsMenuButton, QObject::tr("List All Tabs"));
+	internal::setToolTip(TabsMenuButton, QObject::tr("Show All Tabs"));
 	TabsMenuButton->setSizePolicy(ButtonSizePolicy);
 	Layout->addWidget(TabsMenuButton, 0);
 	_this->connect(TabsMenuButton->menu(), SIGNAL(triggered(QAction*)),

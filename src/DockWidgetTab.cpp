@@ -479,6 +479,8 @@ namespace ads {
         update();
         updateGeometry();
 
+        setSizePolicy(active ? QSizePolicy::Minimum : QSizePolicy::Preferred, QSizePolicy::Preferred);
+
         Q_EMIT activeTabChanged();
     }
 

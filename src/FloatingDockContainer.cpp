@@ -599,7 +599,7 @@ static const char* windowsMessageString(int MessageId)
 
         // MODIFIED BY CFXS: Minimize
         setWindowFlag(Qt::Window, true);
-        setWindowFlag(Qt::WindowMaximizeButtonHint, false);
+        //setWindowFlag(Qt::WindowMaximizeButtonHint, false);
         setWindowFlag(Qt::WindowMinimizeButtonHint, false);
         // no max/min close button looks better than Qt::Tool. at least on Windows
 
